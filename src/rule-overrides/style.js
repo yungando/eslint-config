@@ -1,0 +1,26 @@
+/// keep-sorted
+const styleRuleOverrides = {
+  'style/arrow-parens': ['error', 'always'],
+  'style/brace-style': ['error', '1tbs', { allowSingleLine: true }],
+  'style/function-call-spacing': 'error',
+  'style/function-paren-newline': ['error', 'multiline-arguments'],
+  'style/implicit-arrow-linebreak': 'error',
+  'style/jsx-closing-bracket-location': ['error', 'line-aligned'],
+  'style/jsx-curly-brace-presence': ['error', { children: 'never', props: 'never' }],
+  'style/jsx-pascal-case': ['error', { allowAllCaps: true }],
+  'style/max-len': ['error', 100, 2, {
+    ignoreComments: true,
+    ignoreUrls: true,
+    ignoreStrings: true,
+    ignoreTemplateLiterals: true,
+    ignoreRegExpLiterals: true,
+  }],
+  'style/newline-per-chained-call': ['error', { ignoreChainWithDepth: 3 }],
+  'style/nonblock-statement-body-position': 'error',
+  'style/object-curly-newline': ['error', { ObjectExpression: { minProperties: 4, multiline: true, consistent: true }, ObjectPattern: { minProperties: 4, multiline: true, consistent: true } }],
+  'style/object-property-newline': ['error', { allowAllPropertiesOnSameLine: true }],
+  'style/operator-linebreak': ['error', 'before', { overrides: { '=': 'none' } }],
+  'style/padding-line-between-statements': ['error', { blankLine: 'always', prev: '*', next: 'return' }],
+  'style/quote-props': ['error', 'as-needed', { keywords: false, numbers: false }],
+  'style/quotes': ['error', 'single', { avoidEscape: true }],
+};
