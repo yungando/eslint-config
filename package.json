@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@antfu/eslint-config": "^7.0.1",
-    "hahabot": "github:yungando/hahabot"
   },
   "devDependencies": {
     "@eslint/config-inspector": "^1.4.2",
