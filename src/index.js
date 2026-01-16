@@ -16,6 +16,8 @@ export const config = async (options = {}) => {
     react: enableReact = false,
     test: enableJest = false,
     formatters: enableFormatters = true,
+    stylstic: stylisticRules = { semi: true },
+    ...antfuOptions
   } = options;
 
   const configs = [
@@ -27,26 +29,26 @@ export const config = async (options = {}) => {
   ];
 
   if (enableReact) {
-    configs.push([reactConfig(), jsxA11yConfig()]);
+    configs.push(...reactConfig(), ...jsxA11yConfig());
   }
 
   if (enableJest) {
-    configs.push(jestConfig());
+    configs.push(...await jestConfig());
   }
 
   if (enableReact && enableJest) {
-    configs.push(testingLibraryConfig());
+    configs.push(...await testingLibraryConfig());
   }
 
-  return antfu(
+  return await antfu(
     {
       react: enableReact,
-      stylistic: { semi: true },
+      stylistic: stylisticRules,
       formatters: enableFormatters,
       ...(enableReact && {
         jsx: { a11y: true },
       }),
+      ...antfuOptions,
     },
-  )
-    .append(configs);
+  ).append(configs);
 };

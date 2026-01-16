@@ -8,10 +8,12 @@
   "keywords": [],
   "scripts": {
     "lint": "node ./node_modules/eslint/bin/eslint.js .",
-    "lint:fix": "node ./node_modules/eslint/bin/eslint.js . --fix"
+    "lint:fix": "node ./node_modules/eslint/bin/eslint.js . --fix",
+    "inspector": "npx @eslint/config-inspector --config eslint-inspector.config.js"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^7.0.1"
+    "@antfu/eslint-config": "^7.0.1",
+    "hahabot": "github:yungando/hahabot"
   },
   "devDependencies": {
     "eslint": "^9.39.2"

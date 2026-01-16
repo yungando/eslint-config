@@ -6,11 +6,13 @@ export const jestConfig = async () => {
 
   return [
     {
+      ...jestPlugin.configs['flat/recommended'],
       name: 'yungando/jest',
-      plugins: {
-        jestPlugin,
+      languageOptions: {
+        globals: {
+          fetchMock: true,
+        },
       },
-      rules: jestPlugin.configs['flat/recommended'],
     },
   ];
 };
