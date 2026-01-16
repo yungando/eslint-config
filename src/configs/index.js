@@ -1,4 +1,5 @@
 export * from './antfu.js';
+export * from './comments.js';
 export * from './eslint.js';
 export * from './import.js';
 export * from './jest.js';
@@ -7,3 +8,4 @@ export * from './node.js';
 export * from './react.js';
 export * from './style.js';
 export * from './testing-library.js';
+export * from './unicorn.js';

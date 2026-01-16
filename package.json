@@ -9,13 +9,17 @@
   "scripts": {
     "lint": "node ./node_modules/eslint/bin/eslint.js .",
     "lint:fix": "node ./node_modules/eslint/bin/eslint.js . --fix",
-    "inspector": "npx @eslint/config-inspector --config eslint-inspector.config.js"
+    "lint:inspect": "node ./node_modules/@eslint/config-inspector/bin.mjs --config eslint-inspector.config.js"
   },
   "dependencies": {
     "@antfu/eslint-config": "^7.0.1",
     "hahabot": "github:yungando/hahabot"
   },
   "devDependencies": {
-    "eslint": "^9.39.2"
+    "@eslint/config-inspector": "^1.4.2",
+    "eslint": "^9.39.2",
+    "eslint-plugin-jest": "^29.12.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-testing-library": "^7.15.4"
   }
 }

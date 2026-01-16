@@ -6,6 +6,7 @@ export const styleConfig = () => {
       rules: {
         'style/arrow-parens': ['error', 'always'],
         'style/brace-style': ['error', '1tbs', { allowSingleLine: true }],
+        'style/function-call-argument-newline': ['error', 'consistent'],
         'style/function-call-spacing': 'error',
         'style/function-paren-newline': ['error', 'multiline-arguments'],
         'style/implicit-arrow-linebreak': 'error',

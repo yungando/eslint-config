@@ -1,6 +1,7 @@
 import { antfu } from '@antfu/eslint-config';
 import {
   antfuConfig,
+  commentsConfig,
   eslintConfig,
   importConfig,
   jestConfig,
@@ -9,6 +10,7 @@ import {
   reactConfig,
   styleConfig,
   testingLibraryConfig,
+  unicornConfig,
 } from './configs/index.js';
 
 export const config = async (options = {}) => {
@@ -22,10 +24,12 @@ export const config = async (options = {}) => {
 
   const configs = [
     ...antfuConfig(),
+    ...commentsConfig(),
     ...eslintConfig(),
     ...importConfig(),
     ...nodeConfig(),
     ...styleConfig(),
+    ...unicornConfig(),
   ];
 
   if (enableReact) {
@@ -50,5 +54,7 @@ export const config = async (options = {}) => {
       }),
       ...antfuOptions,
     },
-  ).append(configs);
+  )
+    .prepend()
+    .append(configs);
 };
