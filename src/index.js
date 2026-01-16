@@ -13,6 +13,7 @@ import {
   unicornConfig,
 } from './configs/index.js';
 
+// eslint-disable-next-line import/prefer-default-export
 export const config = async (options = {}) => {
   const {
     react: enableReact = false,

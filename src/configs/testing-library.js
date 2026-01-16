@@ -1,6 +1,6 @@
 import { ensurePackages, interopDefault } from '@antfu/eslint-config';
 
-export const testingLibraryConfig = async () => {
+export default async () => {
   await ensurePackages(['eslint-plugin-testing-library']);
   const testingLibraryPlugin = await interopDefault(import('eslint-plugin-testing-library'));
 

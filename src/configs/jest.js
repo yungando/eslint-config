@@ -1,6 +1,6 @@
 import { ensurePackages, interopDefault } from '@antfu/eslint-config';
 
-export const jestConfig = async () => {
+export default async () => {
   await ensurePackages(['eslint-plugin-jest']);
   const jestPlugin = await interopDefault(import('eslint-plugin-jest'));
 
