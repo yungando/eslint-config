@@ -1,89 +1,52 @@
-
 import { antfu } from '@antfu/eslint-config';
 import {
-  antfuRuleOverrides,
-  eslintRuleOverrides,
-  importRuleOverrides,
-  jsxA11yRuleOverrides,
-  nodeRuleOverrides,
-  reactRuleOverrides,
-  styleRuleOverrides,
-  testingLibraryRuleOverrides,
-} from './rule-overrides';
+  antfuConfig,
+  eslintConfig,
+  importConfig,
+  jestConfig,
+  jsxA11yConfig,
+  nodeConfig,
+  reactConfig,
+  styleConfig,
+  testingLibraryConfig,
+} from './configs/index.js';
 
-export function config(options) {
+export const config = async (options = {}) => {
   const {
-    react = false,
-    test = true,
-    formatters = true,
+    react: enableReact = false,
+    test: enableJest = false,
+    formatters: enableFormatters = true,
   } = options;
 
-  const ruleOverrides = {
-    ...antfuRuleOverrides,
-    ...eslintRuleOverrides,
-    ...styleRuleOverrides,
-    ...nodeRuleOverrides,
-    ...importRuleOverrides,
+  const configs = [
+    ...antfuConfig(),
+    ...eslintConfig(),
+    ...importConfig(),
+    ...nodeConfig(),
+    ...styleConfig(),
+  ];
 
-    ...(react && {
-      ...reactRuleOverrides,
-      ...jsxA11yRuleOverrides,
-    }),
+  if (enableReact) {
+    configs.push([reactConfig(), jsxA11yConfig()]);
+  }
 
-    ...((test && react) && testingLibraryRuleOverrides),
+  if (enableJest) {
+    configs.push(jestConfig());
+  }
+
+  if (enableReact && enableJest) {
+    configs.push(testingLibraryConfig());
   }
 
   return antfu(
     {
-      react: react,
+      react: enableReact,
       stylistic: { semi: true },
-      formatters: formatters,
-      ...(react && {
+      formatters: enableFormatters,
+      ...(enableReact && {
         jsx: { a11y: true },
-      })
+      }),
     },
-    {
-      ...(test && jestPlugin.configs['flat/recommended']),
-      ...((test && react) && testingLibraryPlugin.configs['flat/react'])
-    },
-    {
-      ruleOverrides,
-    }
-  );
+  )
+    .append(configs);
 };
-
-// {
-//     jsx: { a11y: true },
-//     react: true,
-//     stylistic: { semi: true },
-//     formatters: true,
-//     languageOptions: {
-//       globals: { fetchMock: true },
-//       parser: babelEslintParser,
-//       parserOptions: {
-//         babelOptions: {
-//           configFile: path.resolve(__dirname, 'babel.config.js'),
-//         },
-//       },
-//     },
-//     rules: {
-
-//     },
-//   },
-//   {
-//     
-//   },
-//   {
-//     rules: {
-//       ...eslintBaseConfigRuleOverrides,
-//       ...jsxA11yPluginRuleOverrides,
-//       ...importPluginRuleOverrides,
-
-//       ...eslintRuleOverrides,
-//       ...styleRuleOverrides,
-//       ...antfuRuleOverrides,
-//       ...nodeRuleOverrides,
-//       ...testingLibraryRuleOverrides,
-//       ...reactRuleOverrides,
-//     },
-//   },

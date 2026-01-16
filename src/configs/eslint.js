@@ -1,16 +1,4 @@
 /// keep-sorted
-const eslintRuleOverrides = {
-  'new-cap': ['error', { capIsNewExceptions: ['Immutable.Map', 'Immutable.Set', 'Immutable.List'], properties: false }],
-  'no-param-reassign': ['error', { props: true }],
-  'no-restricted-syntax': ['error', 'DebuggerStatement', 'LabeledStatement', 'WithStatement'],
-  'no-underscore-dangle': 'error',
-  'no-unused-vars': ['error', { vars: 'all', args: 'after-used', caughtErrors: 'all' }],
-  'one-var': ['error', 'never'],
-  'prefer-regex-literals': ['error', { disallowRedundantWrapping: true }],
-  curly: ['error', 'multi-line'],
-};
-
-/// keep-sorted
 const eslintBaseConfigRuleOverrides = {
   'array-callback-return': ['error', { allowImplicit: true }],
   'func-style': 'off',
@@ -34,4 +22,21 @@ const eslintBaseConfigRuleOverrides = {
   camelcase: ['error', { properties: 'never' }],
 };
 
-export default eslintRuleOverrides;
+export const eslintConfig = () => {
+  return [
+    {
+      name: 'yungando/eslint',
+      /// keep-sorted
+      rules: {
+        'new-cap': ['error', { capIsNewExceptions: ['Immutable.Map', 'Immutable.Set', 'Immutable.List'], properties: false }],
+        'no-param-reassign': ['error', { props: true }],
+        'no-restricted-syntax': ['error', 'DebuggerStatement', 'LabeledStatement', 'WithStatement'],
+        'no-underscore-dangle': 'error',
+        'no-unused-vars': ['error', { vars: 'all', args: 'after-used', caughtErrors: 'all' }],
+        'one-var': ['error', 'never'],
+        'prefer-regex-literals': ['error', { disallowRedundantWrapping: true }],
+        curly: ['error', 'multi-line'],
+      },
+    },
+  ];
+};

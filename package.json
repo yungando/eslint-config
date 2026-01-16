@@ -1,20 +1,19 @@
 {
   "name": "@yungando/eslint-config",
-  "version": "1.0.0",
-  "main": "index.js",
   "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "version": "1.0.0",
   "description": "",
+  "author": "yungando",
+  "license": "ISC",
+  "keywords": [],
+  "scripts": {
+    "lint": "node ./node_modules/eslint/bin/eslint.js .",
+    "lint:fix": "node ./node_modules/eslint/bin/eslint.js . --fix"
+  },
+  "dependencies": {
+    "@antfu/eslint-config": "^7.0.1"
+  },
   "devDependencies": {
-    "@antfu/eslint-config": "^7.0.1",
-    "eslint": "^9.39.2",
-    "eslint-flat-config-utils": "^2.1.4",
-    "eslint-plugin-jest": "^29.12.1",
-    "eslint-plugin-testing-library": "^7.15.4"
+    "eslint": "^9.39.2"
   }
 }
