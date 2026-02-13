@@ -6,9 +6,11 @@ export default async () => {
 
   return [
     {
-      ...testingLibraryPlugin.configs['flat/react'],
       name: 'yungando/testing-library',
+      plugins: { 'testing-library': testingLibraryPlugin },
+      // keep-sorted
       rules: {
+        ...testingLibraryPlugin.configs['flat/react'].rules,
         'testing-library/no-debugging-utils': 'off',
         'testing-library/no-node-access': 'off',
         'testing-library/no-render-in-lifecycle': 'off',

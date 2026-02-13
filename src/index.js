@@ -4,11 +4,11 @@ import {
   commentsConfig,
   eslintConfig,
   importConfig,
-  jestConfig,
   jsxA11yConfig,
   nodeConfig,
   reactConfig,
   styleConfig,
+  testConfig,
   testingLibraryConfig,
   unicornConfig,
 } from './configs/index.js';
@@ -17,7 +17,7 @@ import {
 export const config = async (options = {}) => {
   const {
     react: enableReact = false,
-    test: enableJest = false,
+    test: enableTest = false,
     formatters: enableFormatters = true,
     stylstic: stylisticRules = { semi: true },
     ...antfuOptions
@@ -37,17 +37,18 @@ export const config = async (options = {}) => {
     configs.push(...reactConfig(), ...jsxA11yConfig());
   }
 
-  if (enableJest) {
-    configs.push(...await jestConfig());
+  if (enableTest) {
+    configs.push(...await testConfig());
   }
 
-  if (enableReact && enableJest) {
+  if (enableReact && enableTest) {
     configs.push(...await testingLibraryConfig());
   }
 
   return await antfu(
     {
       react: enableReact,
+      test: enableTest,
       stylistic: stylisticRules,
       formatters: enableFormatters,
       ...(enableReact && {
