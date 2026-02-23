@@ -11,10 +11,10 @@ import {
   testConfig,
   testingLibraryConfig,
   unicornConfig,
+  yungandoConfig,
 } from './configs/index.js';
 
-// eslint-disable-next-line import/prefer-default-export
-export const config = async (options = {}) => {
+const config = async (options = {}) => {
   const {
     react: enableReact = false,
     test: enableTest = false,
@@ -31,6 +31,7 @@ export const config = async (options = {}) => {
     ...nodeConfig(),
     ...styleConfig(),
     ...unicornConfig(),
+    ...yungandoConfig(),
   ];
 
   if (enableReact) {
@@ -56,7 +57,7 @@ export const config = async (options = {}) => {
       }),
       ...antfuOptions,
     },
-  )
-    .prepend()
-    .append(configs);
+  ).append(configs);
 };
+
+export default config;

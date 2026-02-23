@@ -1,6 +1,9 @@
+import { GLOB_SRC } from '@antfu/eslint-config';
+
 export default () => [
   {
     name: 'yungando/node',
+    files: [GLOB_SRC],
     /// keep-sorted
     rules: {
       'node/file-extension-in-import': ['error', 'always'],

@@ -9,3 +9,4 @@ export { default as styleConfig } from './style.js';
 export { default as testConfig } from './test.js';
 export { default as testingLibraryConfig } from './testing-library.js';
 export { default as unicornConfig } from './unicorn.js';
+export { default as yungandoConfig } from './yungando.js';

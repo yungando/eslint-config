@@ -1,6 +1,9 @@
+import { GLOB_SRC } from '@antfu/eslint-config';
+
 export default () => [
   {
     name: 'yungando/react',
+    files: [GLOB_SRC],
     /// keep-sorted
     rules: {
       'react-dom/no-missing-button-type': 'error',

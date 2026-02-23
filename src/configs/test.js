@@ -1,4 +1,4 @@
-import { ensurePackages, interopDefault } from '@antfu/eslint-config';
+import { ensurePackages, GLOB_TESTS, interopDefault } from '@antfu/eslint-config';
 
 export default async () => {
   await ensurePackages(['eslint-plugin-jest']);
@@ -7,6 +7,7 @@ export default async () => {
   return [
     {
       name: 'yungando/test',
+      files: [GLOB_TESTS],
       languageOptions: {
         globals: {
           ...jestPlugin.configs['flat/recommended'].languageOptions.globals,
