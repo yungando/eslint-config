@@ -26,6 +26,11 @@ const config = async (options = {}) => {
     ...antfuOptions
   } = options;
 
+  const extraJsoncFiles = [
+    '**/*.jem',
+    '**/*.rpo',
+  ];
+
   const configs = [
     ...antfuConfig(),
     ...commentsConfig(),
@@ -49,16 +54,19 @@ const config = async (options = {}) => {
     configs.push(...await testingLibraryConfig());
   }
 
-  return await antfu(
-    {
-      stylistic: enableStylistic,
-      formatters: enableFormatters,
-      test: enableTest,
-      react: enableReact,
-      jsx: jsxOptions,
-      ...antfuOptions,
-    },
-  ).append(configs);
+  return await antfu({
+    stylistic: enableStylistic,
+    formatters: enableFormatters,
+    test: enableTest,
+    react: enableReact,
+    jsx: jsxOptions,
+    ...antfuOptions,
+  })
+    .override('antfu/jsonc/rules', (jsoncConfig) => ({
+      ...jsoncConfig,
+      files: [...(jsoncConfig.files ?? []), ...extraJsoncFiles],
+    }))
+    .append(configs);
 };
 
 export default config;
