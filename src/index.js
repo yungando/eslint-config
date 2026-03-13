@@ -16,10 +16,13 @@ import {
 
 const config = async (options = {}) => {
   const {
-    react: enableReact = false,
-    test: enableTest = false,
+    stylistic: enableStylistic = true,
     formatters: enableFormatters = true,
-    stylstic: stylisticRules = { semi: true },
+    test: enableTest = false,
+    react: enableReact = false,
+    jsx: jsxOptions = enableReact
+      ? { a11y: true }
+      : false,
     ...antfuOptions
   } = options;
 
@@ -48,13 +51,11 @@ const config = async (options = {}) => {
 
   return await antfu(
     {
-      react: enableReact,
-      test: enableTest,
-      stylistic: stylisticRules,
+      stylistic: enableStylistic,
       formatters: enableFormatters,
-      ...(enableReact && {
-        jsx: { a11y: true },
-      }),
+      test: enableTest,
+      react: enableReact,
+      jsx: jsxOptions,
       ...antfuOptions,
     },
   ).append(configs);

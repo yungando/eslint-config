@@ -42,6 +42,7 @@ export default () => [
         { keywords: false, numbers: false },
       ],
       'style/quotes': ['error', 'single', { avoidEscape: true }],
+      'style/semi': ['error', 'always'],
     },
   },
 ];

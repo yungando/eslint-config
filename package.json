@@ -1,7 +1,7 @@
 {
   "name": "@yungando/eslint-config",
   "type": "module",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "",
   "author": "yungando",
   "license": "ISC",
@@ -10,6 +10,7 @@
     ".": "./src/index.js"
   },
   "scripts": {
+    "test": "vitest",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "lint:inspect": "eslint --inspect-config --config eslint-inspector.config.js"
@@ -19,17 +20,17 @@
   },
   "dependencies": {
     "@antfu/eslint-config": "^7.0.1",
-    "@yungando/eslint-plugin": "^1.0.1",
-    "eslint-plugin-format": "^1.4.0"
-  },
-  "devDependencies": {
     "@eslint-react/eslint-plugin": "^2.12.4",
-    "@eslint/config-inspector": "^1.4.2",
-    "eslint": "^9.39.2",
-    "eslint-plugin-jest": "^29.12.1",
+    "@yungando/eslint-plugin": "^1.0.1",
+    "eslint-plugin-format": "^1.4.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.26",
     "eslint-plugin-testing-library": "^7.15.4"
+  },
+  "devDependencies": {
+    "@eslint/config-inspector": "^1.4.2",
+    "eslint": "^9.39.2",
+    "vitest": "^4.0.18"
   }
 }

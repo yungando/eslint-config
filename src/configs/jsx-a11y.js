@@ -1,6 +1,9 @@
+import { GLOB_JSX } from '@antfu/eslint-config';
+
 export default () => [
   {
     name: 'yungando/jsx-a11y',
+    files: [GLOB_JSX],
     /// keep-sorted
     rules: {
       'jsx-a11y/control-has-associated-label': 'error',
