@@ -3,7 +3,7 @@ import { GLOB_TESTS } from '@antfu/eslint-config';
 export default async () => [
   {
     name: 'yungando/test',
-    files: [GLOB_TESTS],
+    files: GLOB_TESTS,
     /// keep-sorted
     rules: {
       'test/expect-expect': 'warn',

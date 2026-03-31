@@ -14,7 +14,7 @@ import {
   yungandoConfig,
 } from './configs/index.js';
 
-const config = async (options = {}) => {
+const config = (options = {}) => {
   const {
     stylistic: enableStylistic = true,
     formatters: enableFormatters = true,
@@ -47,14 +47,14 @@ const config = async (options = {}) => {
   }
 
   if (enableTest) {
-    configs.push(...await testConfig());
+    configs.push(testConfig());
   }
 
   if (enableReact && enableTest) {
-    configs.push(...await testingLibraryConfig());
+    configs.push(testingLibraryConfig());
   }
 
-  return await antfu({
+  return antfu({
     stylistic: enableStylistic,
     formatters: enableFormatters,
     test: enableTest,
