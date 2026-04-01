@@ -1,6 +1,6 @@
 import testingLibraryPlugin from 'eslint-plugin-testing-library';
 
-export default async () => [
+export default () => [
   {
     name: 'yungando/testing-library',
     plugins: { 'testing-library': testingLibraryPlugin },

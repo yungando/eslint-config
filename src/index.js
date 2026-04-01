@@ -49,11 +49,11 @@ const config = (options = {}) => {
   }
 
   if (enableTest) {
-    configs.push(testConfig());
+    configs.push(...testConfig());
   }
 
   if (enableReact && enableTest) {
-    configs.push(testingLibraryConfig());
+    configs.push(...testingLibraryConfig());
   }
 
   return antfu({

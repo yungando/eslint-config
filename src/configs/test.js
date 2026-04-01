@@ -1,6 +1,6 @@
 import { GLOB_TESTS } from '@antfu/eslint-config';
 
-export default async () => [
+export default () => [
   {
     name: 'yungando/test',
     files: GLOB_TESTS,
