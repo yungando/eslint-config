@@ -1,5 +1,6 @@
 export { default as antfuConfig } from './antfu.js';
 export { default as commentsConfig } from './comments.js';
+export { default as e18eConfig } from './e18e.js';
 export { default as eslintConfig } from './eslint.js';
 export { default as importConfig } from './import.js';
 export { default as jsxA11yConfig } from './jsx-a11y.js';

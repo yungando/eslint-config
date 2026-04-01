@@ -4,13 +4,20 @@ export default () => [
     /// keep-sorted
     rules: {
       'style/arrow-parens': ['error', 'always'],
-      'style/brace-style': ['error', '1tbs', { allowSingleLine: true }],
+      'style/brace-style': [
+        'error',
+        '1tbs',
+        { allowSingleLine: true },
+      ],
       'style/function-call-argument-newline': ['error', 'consistent'],
       'style/function-call-spacing': 'error',
       'style/function-paren-newline': ['error', 'multiline-arguments'],
       'style/implicit-arrow-linebreak': 'error',
       'style/jsx-closing-bracket-location': ['error', 'line-aligned'],
-      'style/jsx-curly-brace-presence': ['error', { children: 'never', props: 'never' }],
+      'style/jsx-curly-brace-presence': [
+        'error',
+        { children: 'never', props: 'never' },
+      ],
       'style/jsx-pascal-case': ['error', { allowAllCaps: true }],
       'style/max-len': [
         'error',
@@ -41,7 +48,11 @@ export default () => [
         'as-needed',
         { keywords: false, numbers: false },
       ],
-      'style/quotes': ['error', 'single', { avoidEscape: true }],
+      'style/quotes': [
+        'error',
+        'single',
+        { avoidEscape: true },
+      ],
       'style/semi': ['error', 'always'],
     },
   },

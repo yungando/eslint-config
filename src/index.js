@@ -2,6 +2,7 @@ import { antfu } from '@antfu/eslint-config';
 import {
   antfuConfig,
   commentsConfig,
+  e18eConfig,
   eslintConfig,
   importConfig,
   jsxA11yConfig,
@@ -34,6 +35,7 @@ const config = (options = {}) => {
   const configs = [
     ...antfuConfig(),
     ...commentsConfig(),
+    ...e18eConfig(),
     ...eslintConfig(),
     ...importConfig(),
     ...nodeConfig(),
@@ -64,7 +66,7 @@ const config = (options = {}) => {
   })
     .override('antfu/jsonc/rules', (jsoncConfig) => ({
       ...jsoncConfig,
-      files: [...(jsoncConfig.files ?? []), ...extraJsoncFiles],
+      files: [...jsoncConfig.files, ...extraJsoncFiles],
     }))
     .append(configs);
 };
