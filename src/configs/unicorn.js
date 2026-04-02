@@ -3,6 +3,7 @@ export default () => [
     name: 'yungando/unicorn',
     /// keep-sorted
     rules: {
+      'unicorn/no-null': 'error',
       'unicorn/prefer-array-find': 'error',
       'unicorn/prefer-array-flat-map': 'error',
       'unicorn/prefer-array-flat': 'error',
