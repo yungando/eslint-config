@@ -5,6 +5,7 @@ import {
   e18eConfig,
   eslintConfig,
   importConfig,
+  jestDomConfig,
   jsxA11yConfig,
   nodeConfig,
   reactConfig,
@@ -54,6 +55,7 @@ const config = (options = {}) => {
 
   if (enableReact && enableTest) {
     configs.push(...testingLibraryConfig());
+    configs.push(...jestDomConfig());
   }
 
   return antfu({
