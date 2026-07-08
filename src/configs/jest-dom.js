@@ -1,4 +1,4 @@
-import jestDomPlugin from 'eslint-plugin-jest-dom';
+import jestDomPlugin from 'eslint-plugin-jest-dom-ya';
 
 export default () => [
   {

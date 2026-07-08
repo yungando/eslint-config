@@ -1,6 +1,9 @@
+import { GLOB_SRC } from '@antfu/eslint-config';
+
 export default () => [
   {
     name: 'yungando/unicorn',
+    files: [GLOB_SRC],
     /// keep-sorted
     rules: {
       'unicorn/no-null': 'error',

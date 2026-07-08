@@ -63,10 +63,7 @@ export default () => [
       'no-underscore-dangle': 'error',
       'no-unsafe-optional-chaining': 'error',
       'no-unused-private-class-members': 'error',
-      'no-unused-vars': [
-        'error',
-        { vars: 'all', args: 'after-used', caughtErrors: 'all' },
-      ],
+      'no-unused-vars': 'error',
       'no-useless-assignment': 'error',
       'no-useless-concat': 'error',
       'no-useless-escape': 'error',
