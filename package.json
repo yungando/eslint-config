@@ -22,7 +22,7 @@
     "lint:inspect": "eslint --inspect-config --config eslint-inspector.config.js"
   },
   "peerDependencies": {
-    "eslint": "^9.39.2"
+    "eslint": "^10.6.0"
   },
   "dependencies": {
     "@antfu/eslint-config": "^9.1.0",
