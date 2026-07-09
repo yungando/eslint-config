@@ -73,6 +73,6 @@ jobs:
         env:
           TARBALL: ${{ needs.build.outputs.tarball }}
       - run: npm stage publish --provenance --access public $TARBALL
-        if: "!github.event.release.prerelease"
+        if: '!github.event.release.prerelease'
         env:
           TARBALL: ${{ needs.build.outputs.tarball }}

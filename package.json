@@ -19,7 +19,7 @@
     "test": "vitest",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "lint:inspect": "eslint --inspect-config --config eslint-inspector.config.js"
+    "lint:inspect": "eslint --inspect-config"
   },
   "peerDependencies": {
     "eslint": "^10.6.0"

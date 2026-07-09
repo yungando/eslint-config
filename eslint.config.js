@@ -1,3 +1,3 @@
 import config from './src/index.js';
 
-export default config({ test: true });
+export default config({ test: true, react: true });
