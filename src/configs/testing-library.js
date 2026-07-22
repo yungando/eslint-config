@@ -1,9 +1,11 @@
+import { GLOB_TESTS } from '@antfu/eslint-config';
 import testingLibraryPlugin from 'eslint-plugin-testing-library';
 
 export default () => [
   {
     name: 'yungando/testing-library',
     plugins: { 'testing-library': testingLibraryPlugin },
+    files: [GLOB_TESTS],
     // keep-sorted
     rules: {
       ...testingLibraryPlugin.configs['flat/react'].rules,
