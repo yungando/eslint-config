@@ -11,7 +11,7 @@ export default () => [
       'test/no-commented-out-tests': 'warn',
       'test/no-conditional-expect': 'error',
       'test/no-disabled-tests': 'warn',
-      'test/no-focused-tests': 'error',
+      'test/no-focused-tests': ['error', { fixable: false }],
       'test/no-interpolation-in-snapshots': 'error',
       'test/no-mocks-import': 'error',
       'test/no-standalone-expect': 'error',
