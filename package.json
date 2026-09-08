@@ -19,7 +19,9 @@
     "test": "vitest",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "lint:inspect": "eslint --inspect-config"
+    "lint:inspect": "eslint --inspect-config",
+    "preversion": "npm test && npm run lint",
+    "postversion": "git push && git push --tags"
   },
   "peerDependencies": {
     "eslint": "^10.6.0"
