@@ -6,7 +6,6 @@ export default () => [
     files: [GLOB_SRC],
     /// keep-sorted
     rules: {
-      'unicorn/no-null': 'error',
       'unicorn/prefer-array-find': 'error',
       'unicorn/prefer-array-flat-map': 'error',
       'unicorn/prefer-array-flat': 'error',
