@@ -22,9 +22,6 @@ const config = (options = {}) => {
     formatters: enableFormatters = true,
     test: enableTest = false,
     react: enableReact = false,
-    jsx: jsxOptions = enableReact
-      ? { a11y: true }
-      : false,
     ...antfuOptions
   } = options;
 
@@ -63,7 +60,6 @@ const config = (options = {}) => {
     formatters: enableFormatters,
     test: enableTest,
     react: enableReact,
-    jsx: jsxOptions,
     ...antfuOptions,
   })
     .override('antfu/jsonc/rules', (jsoncConfig) => ({
