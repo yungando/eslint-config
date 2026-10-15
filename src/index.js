@@ -16,15 +16,13 @@ import {
   yungandoConfig,
 } from './configs/index.js';
 
-const config = (options = {}) => {
-  const {
-    stylistic: enableStylistic = true,
-    formatters: enableFormatters = true,
-    test: enableTest = false,
-    react: enableReact = false,
-    ...antfuOptions
-  } = options;
-
+const config = ({
+  stylistic: enableStylistic = true,
+  formatters: enableFormatters = true,
+  test: enableTest = false,
+  react: enableReact = false,
+  ...antfuOptions
+} = {}) => {
   const extraJsoncFiles = [
     '**/*.jem',
     '**/*.rpo',
