@@ -5,13 +5,9 @@ import {
   e18eConfig,
   eslintConfig,
   importConfig,
-  jestDomConfig,
-  jsxA11yConfig,
   nodeConfig,
-  reactConfig,
   styleConfig,
   testConfig,
-  testingLibraryConfig,
   unicornConfig,
   yungandoConfig,
 } from './configs/index.js';
@@ -20,7 +16,6 @@ const config = ({
   stylistic: enableStylistic = true,
   formatters: enableFormatters = true,
   test: enableTest = false,
-  react: enableReact = false,
   ...antfuOptions
 } = {}) => {
   const extraJsoncFiles = [
@@ -40,24 +35,14 @@ const config = ({
     ...yungandoConfig(),
   ];
 
-  if (enableReact) {
-    configs.push(...reactConfig(), ...jsxA11yConfig());
-  }
-
   if (enableTest) {
     configs.push(...testConfig());
-  }
-
-  if (enableReact && enableTest) {
-    configs.push(...testingLibraryConfig());
-    configs.push(...jestDomConfig());
   }
 
   return antfu({
     stylistic: enableStylistic,
     formatters: enableFormatters,
     test: enableTest,
-    react: enableReact,
     ...antfuOptions,
   })
     .override('antfu/jsonc/rules', (jsoncConfig) => ({
