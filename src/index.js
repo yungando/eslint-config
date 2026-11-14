@@ -15,7 +15,7 @@ import {
 const config = ({
   stylistic: enableStylistic = true,
   formatters: enableFormatters = true,
-  test: enableTest = false,
+  test: enableTest = true,
   ...antfuOptions
 } = {}) => {
   const extraJsoncFiles = [
