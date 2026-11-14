@@ -24,19 +24,19 @@ const config = ({
   ];
 
   const configs = [
-    ...antfuConfig(),
-    ...commentsConfig(),
-    ...e18eConfig(),
-    ...eslintConfig(),
-    ...importConfig(),
-    ...nodeConfig(),
-    ...styleConfig(),
-    ...unicornConfig(),
-    ...yungandoConfig(),
+    antfuConfig,
+    commentsConfig,
+    e18eConfig,
+    eslintConfig,
+    importConfig,
+    nodeConfig,
+    styleConfig,
+    unicornConfig,
+    yungandoConfig,
   ];
 
   if (enableTest) {
-    configs.push(...testConfig());
+    configs.push(testConfig);
   }
 
   return antfu({
