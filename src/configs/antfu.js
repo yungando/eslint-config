@@ -7,6 +7,7 @@ export default () => [
       'antfu/consistent-list-newline': 'off',
       'antfu/curly': 'off',
       'antfu/if-newline': 'off',
+      'antfu/reasonable-newline': 'off',
       'antfu/top-level-function': 'off',
     },
   },
